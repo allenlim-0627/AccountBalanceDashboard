@@ -20,7 +20,8 @@ namespace AccountBalance.Context
         }
 
         public DbSet<AccountModel> Accounts { get; set; }
+        public DbSet<UserModel> Users { get; set; }
 
-        
+
     }
 }

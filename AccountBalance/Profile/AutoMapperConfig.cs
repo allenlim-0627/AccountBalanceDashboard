@@ -13,6 +13,7 @@ namespace AccountBalance.Profile
         {
             Mapper.Initialize((config) =>
             {
+                config.CreateMap<AccountModel, AccountExcelDTO>().ReverseMap();
                 config.CreateMap<AccountModel, AccountDTO>().ReverseMap();
             });
         }

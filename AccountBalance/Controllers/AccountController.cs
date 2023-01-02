@@ -44,8 +44,9 @@ namespace AccountBalance.Controllers
             }
         }
 
-        [BasicAuthentication]
-        [MyAuthorize(Roles = "Admin")]
+        //[BasicAuthentication]
+        [HttpPost]
+        //[MyAuthorize(Roles = "Admin")]
         [Route("api/UploadAccount")]
         public HttpResponseMessage UploadAccount()
         {
@@ -78,8 +79,8 @@ namespace AccountBalance.Controllers
                             string month = titles[1];
                             int year = DateTime.Now.Year;
                             // Store all content inside a new List as objetcs
-                            var records = csvReader.GetRecords<AccountDTO>().ToList();
-                            List<AccountModel> accounts = Mapper.Map<List<AccountDTO>, List<AccountModel>>(records);
+                            var records = csvReader.GetRecords<AccountExcelDTO>().ToList();
+                            List<AccountModel> accounts = Mapper.Map<List<AccountExcelDTO>, List<AccountModel>>(records);
                             accounts.ForEach(x =>
                             {
                                 x.Month = month;
@@ -93,8 +94,12 @@ namespace AccountBalance.Controllers
                         }
                     }
                 }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, "No file is passed.");
+                }
 
-                return Request.CreateResponse(HttpStatusCode.OK);
+                return Request.CreateResponse(HttpStatusCode.OK, "File has been uploaded.");
             }
             catch (Exception ex)
             {

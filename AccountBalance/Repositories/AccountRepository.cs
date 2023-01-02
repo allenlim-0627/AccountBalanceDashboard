@@ -12,6 +12,14 @@ namespace AccountBalance.Repositories
     {
         private AccountContext db = new AccountContext();
 
+        #region User
+        public UserModel OnGetUser(string username, string password)
+        {
+            return db.Users.FirstOrDefault(x => x.UserName == username && x.UserPassword == password);
+        }
+        #endregion
+
+        #region Accounts
         public IEnumerable<AccountModel> GetAll()
         {
             return db.Accounts;
@@ -42,6 +50,7 @@ namespace AccountBalance.Repositories
 
             db.SaveChanges();
         }
+        #endregion
 
         protected void Dispose(bool disposing)
         {

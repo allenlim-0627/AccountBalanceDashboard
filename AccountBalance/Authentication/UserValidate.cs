@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AccountBalance.Repositories;
+using AccountBalance.Repositories.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +12,7 @@ namespace AccountBalance.Authentication
         //This method is used to check the user credentials
         public static bool Login(string username, string password)
         {
-            return (username == "allen" && password == "123");
+            return username == "allen" && password == "123";
         }
 
         //This method is used to return the User Details

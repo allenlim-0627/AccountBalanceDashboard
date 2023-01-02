@@ -1,10 +1,8 @@
 ﻿using AccountBalance.Repositories;
 using AccountBalance.Repositories.Interfaces;
 using AccountBalance.Unity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Unity;
 using Unity.Lifetime;
 
@@ -18,6 +16,9 @@ namespace AccountBalance
             var container = new UnityContainer();
             container.RegisterType<IAccountRepository, AccountRepository>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
+
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
