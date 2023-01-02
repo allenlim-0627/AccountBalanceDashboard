@@ -35,7 +35,11 @@ namespace AccountBalance.Controllers
             try
             {
                 var accounts = _repo.GetAll();
-                List<AccountDTO> accountDTOs = Mapper.Map<List<AccountModel>, List<AccountDTO>>(accounts.ToList());
+                List<AccountDTO> accountDTOs = Mapper.Map<List<AccountModel>, List<AccountDTO>>(accounts);
+                accountDTOs.ForEach(x =>
+                {
+                    x.AccountBalance.Replace("\"", "\\\"");
+                });
                 return Request.CreateResponse(HttpStatusCode.OK, accountDTOs);
             }
             catch (Exception ex)
@@ -81,10 +85,12 @@ namespace AccountBalance.Controllers
                             // Store all content inside a new List as objetcs
                             var records = csvReader.GetRecords<AccountExcelDTO>().ToList();
                             List<AccountModel> accounts = Mapper.Map<List<AccountExcelDTO>, List<AccountModel>>(records);
+                            var createdDate = DateTime.Now;
                             accounts.ForEach(x =>
                             {
                                 x.Month = month;
                                 x.Year = year;
+                                x.CreatedDate = createdDate;
                             });
                             _repo.BulkInsertOrUpdate(accounts, month, year);
                         }

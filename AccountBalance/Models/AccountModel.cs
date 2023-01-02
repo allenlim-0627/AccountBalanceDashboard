@@ -15,5 +15,6 @@ namespace AccountBalance.Models
         public string AccountBalance { get; set; }
         public string Month { get; set; }
         public int Year { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

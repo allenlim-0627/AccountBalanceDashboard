@@ -214,6 +214,10 @@
     <Compile Include="Migrations\202212290858490_add usermodel.designer.cs">
       <DependentUpon>202212290858490_add usermodel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301020855442_added created date.cs" />
+    <Compile Include="Migrations\202301020855442_added created date.designer.cs">
+      <DependentUpon>202301020855442_added created date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountDTO.cs" />
     <Compile Include="Models\AccountExcelDTO.cs" />
@@ -255,6 +259,9 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Properties\PublishProfiles\accountBalanceAPI - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\accountBalanceAPI - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\accountBalanceAPI - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -317,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212290858490_add usermodel.resx">
       <DependentUpon>202212290858490_add usermodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301020855442_added created date.resx">
+      <DependentUpon>202301020855442_added created date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

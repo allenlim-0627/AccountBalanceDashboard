@@ -11,7 +11,7 @@ namespace AccountBalance.Repositories.Interfaces
     {
         UserModel OnGetUser(string username, string password);
 
-        IEnumerable<AccountModel> GetAll();
+        List<AccountModel> GetAll();
 
         void BulkInsertOrUpdate(List<AccountModel> accountModels, string month, int year);
     }

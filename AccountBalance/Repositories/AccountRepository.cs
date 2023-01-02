@@ -20,9 +20,17 @@ namespace AccountBalance.Repositories
         #endregion
 
         #region Accounts
-        public IEnumerable<AccountModel> GetAll()
+        public List<AccountModel> GetAll()
         {
-            return db.Accounts;
+            var lastRecord = db.Accounts.OrderByDescending(x => x.CreatedDate).FirstOrDefault();
+            if (lastRecord != null)
+            {
+                return db.Accounts.Where(x => x.Month == lastRecord.Month && x.Year == lastRecord.Year).ToList();
+            }
+            else
+            {
+                return db.Accounts.ToList();
+            }
         }
 
         public void BulkInsertOrUpdate(List<AccountModel> accountModels, string month, int year)
