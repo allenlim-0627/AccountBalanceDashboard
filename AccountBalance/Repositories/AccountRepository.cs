@@ -60,6 +60,11 @@ namespace AccountBalance.Repositories
         }
         #endregion
 
+        public AccountContext GetAccountContext()
+        {
+            return db;
+        }
+
         protected void Dispose(bool disposing)
         {
             if (disposing)

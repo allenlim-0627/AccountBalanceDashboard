@@ -48,9 +48,9 @@ namespace AccountBalance.Controllers
             }
         }
 
-        //[BasicAuthentication]
+        [BasicAuthentication]
         [HttpPost]
-        //[MyAuthorize(Roles = "Admin")]
+        [MyAuthorize(Roles = "Admin")]
         [Route("api/UploadAccount")]
         public HttpResponseMessage UploadAccount()
         {

@@ -1,4 +1,5 @@
-﻿using AccountBalance.Models;
+﻿using AccountBalance.Context;
+using AccountBalance.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace AccountBalance.Repositories.Interfaces
         List<AccountModel> GetAll();
 
         void BulkInsertOrUpdate(List<AccountModel> accountModels, string month, int year);
+
+        AccountContext GetAccountContext();
     }
 }
