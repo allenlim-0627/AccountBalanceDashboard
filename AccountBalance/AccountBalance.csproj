@@ -262,6 +262,7 @@
     <None Include="Properties\PublishProfiles\accountBalanceAPI - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\accountBalanceAPI - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\accountBalanceAPI - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\accountBalanceAPI - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

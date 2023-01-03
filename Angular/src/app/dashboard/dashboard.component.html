@@ -1,0 +1,14 @@
+<div>  
+    <div class="row">  
+      <div class="col-sm-12 btn btn-primary">  
+          Welcome to DashBoard  
+          <br>
+          <div>
+            <button *ngIf="isAdmin" type="button" class="btn" (click)="navigateToUpload()">Upload</button >
+              <button  type="button" class="btn" (click)="navigateToAccount()">View Account</button >
+              <button  type="button" class="btn" (click)="navigateToSignOut()">Sign Out</button >
+
+        </div>
+      </div>  
+    </div>  
+  </div> 

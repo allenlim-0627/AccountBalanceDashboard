@@ -1,0 +1,11 @@
+  <h4>Balance as of {{balanceYear}}</h4>
+  <table class="list-group" >
+    <tr>
+        <th *ngFor="let account of accounts">{{ account.AccountName}}</th> 
+    </tr>
+    <tr>
+        <td *ngFor="let account of accounts"> Rs {{ account.AccountBalance}}</td> 
+    </tr>
+  </table> 
+  <br>
+  <button type="button" class="btn" (click)="navigateToDashboard()">Back To Dashboard</button >

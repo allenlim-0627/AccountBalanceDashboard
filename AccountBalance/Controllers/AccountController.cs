@@ -16,9 +16,11 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace AccountBalance.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AccountController : ApiController
     {
         private readonly IAccountRepository _repo;
